@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>houdini terrain workflow</title>
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+        max-width: 750px;
+      }
+      
+      body {
+        background-color: #261f27;
+        max-width: 800px;
+        margin: 2em auto !important;
+        float: none !important;
+        font-family: sans-serif;
+      }
+
+      p {
+        font-size: .8em;
+        padding: 1em;
+        background: #dad4ca;
+        color: black;
+        font-size: large;
+      }
+      
+      body, h1, h2 {
+        color: #8c0041;
+      }
+      
+      h2 {
+        margin-top: 2em;
+      }
+      
+      li {
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  
+  </body>
+    <h1>Houdini Terrain Workflow</h1>
+    
+    <h2>Saturday</h2>
+    
+    <p>
+      <img src="https://puu.sh/BWiPS/7374972a16.png"/>
+      sketched a test area in photoshop
+    </p>
+    <p>
+      <img src="https://puu.sh/BWiME/ce24bd87ed.png"/>
+      made some really quick geometry in probuilder (focussed on getting the scale and level of detail representative)
+    </p>
+    <p>
+      <img src="https://puu.sh/BWiO3/1da45c1535.png"/>
+      merged and exported as .obj for loading into houdini as test data
+    </p>
+    <p>
+      <img src="https://puu.sh/BWj2S/c6d8b3286e.png" style="float: left"/>
+      <img src="https://puu.sh/BWiU6/b6149cbad7.png"/>
+      wrote the actual houdini code (this part took about 5h i think and i didn't really document it)
+    </p>
+    <p>
+      <img src="https://puu.sh/BWj4P/067b3e0542.png"/>
+      <img src="https://puu.sh/BWj8n/f6ca54ee42.png"/>
+      you can build a digital asset for unity by selecting everything, hitting "collapse selected into subnetwork", then stepping out and hitting "create digital asset" and saving that into your unity Assets folder somewhere.
+    </p>
+    <p>
+      <img src="https://puu.sh/BWjdm/33b3d12c05.png"/>
+      you can edit the properties that are exposed to unity by right clicking again and hitting "type properties"
+    </p>
+    <p>
+      <img src="https://puu.sh/BWlUN/1f8e3a38d9.png"/>
+      drag whatever properties you want to expose to unity from the Create Parameters box into the Existing Paremeters box, and save by right-clicking the node and hitting "Save Node Type"
+    </p>
+    <p>
+      <img src="https://puu.sh/BWlx6/449914ad8b.png"/>
+      back in unity you can drag the new digital asset from your assets folder out into the hierarchy, then drag your probuilder meshes into "input nodes", configure the asset parameters however you want and hit Bake GameObject, it should comes out basically the same in unity as it did in houdini, if you're processing terrain you need "Keep World Transform" set or it'll zero everything out before processing
+    </p>
+    
+    <h2>Sunday</h2>
+    
+    <p>
+      <img src="https://puu.sh/BWjjs/5618ae1d6e.png"/>
+      iterated on the map. realized that i could go way sketchier so i did. worked at 1px = 1meter for whatever reason. also set the measuring tape tool's units to the number of seconds that it takes you to run that far
+    </p>
+    <p>
+      <img src="https://puu.sh/BWgns/f4638693e4.png"/>
+      dropped an enormous quad down in unity to use as a reference
+    </p>
+    <p>
+      <img src="https://puu.sh/BWgHu/ebb57e6eb2.png"/>
+      <img src="https://puu.sh/BWhb7/9e6a710f02.png"/>
+      kind of cut the level out of foam with pb's poly shape tool sort of
+    </p>
+    <p>
+      <img src="https://puu.sh/BWi8U/c1d00a8842.png"/>
+      tweaked the vertices to put a good horizon on the mountains, there was a lot of garbage geometry and i regret not testing any probuilder alternatives before starting
+    </p>
+    <p>
+      <img src="https://puu.sh/BWio5/5da54550ea.png"/>
+      plugged it into the houdini asset and re-baked, materials are set by houdini based on slope
+    </p>
+    <p>
+      <img src="https://puu.sh/BWiIi/f88415685e.png"/>
+      it could use cleanup but it's good enough to get back to prototyping
+    </p>
+  </body>
+</html>
